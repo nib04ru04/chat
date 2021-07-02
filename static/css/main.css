@@ -1,0 +1,25 @@
+
+
+@font-face {
+  font-family: "Hacen-Algeria-Bd";
+  src: url("./fonts/Hacen-Algeria-Bd.eot");
+  src: url("./fonts/Hacen-Algeria-Bd.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/Hacen-Algeria-Bd.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HacenAlgeriaBd";
+  src: url("./fonts/HacenAlgeriaBd.svg#HacenAlgeriaBd") format("svg"),
+    url("./fonts/HacenAlgeriaBd.ttf") format("truetype"),
+    url("./fonts/HacenAlgeriaBd.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-family: "Hacen-Algeria-Bd";
+
+}

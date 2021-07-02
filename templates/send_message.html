@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" style="direction: rtl;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <div class="container">
+          <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+    <li class="breadcrumb-item text-muted">
+        <a href="" class="text-muted">الرئيسية</a>
+    </li>
+    <li class="breadcrumb-item text-muted">
+        <a href="" class="text-muted">اعدادات البوت</a>
+    </li>
+    </ul>
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">إرسال رسائل للعملاء</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('send_message') }}">
+                        {% if 'success' in session: %}
+                            <h3 style="color:green; text-align:center;"> تم إرسال الرسالة بنجاح </h3>
+                            <br>
+                        {% endif %}
+                        {% if 'fail' in session: %}
+                            <h3 style="color:red; text-align:center;"> حدث خطا أثناء ارسالة </h3>
+                            <br>
+                        {% endif %}
+
+
+
+                        <div class="form-group row">
+
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">أدخل رقم الموبايل </label>
+
+                            <div class="col-md-6">
+                                <input placeholder="ex:0096775521104" id="phone" type="chatbot_phone" class="form-control text-right" name="chatbot_phone" value="" required autocomplete="off" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="chatbot_message" class="col-md-4 col-form-label text-md-right">نص الرسالة: </label>
+                            <div class="col-md-6">
+                                <textarea placeholder="نص الرسالة " name="chatbot_message" class="form-control col-xs-12" rows="7" cols="50" required></textarea>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end py-6 px-9">
+                            <button type="submit" name="submit" class="btn btn-primary"
+                                    id="kt_account_profile_details_submit">إرسال
+                            </button>
+                            <a href="" class="btn btn-white">رجوع</a>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
